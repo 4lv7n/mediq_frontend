@@ -56,7 +56,7 @@ export function toPredictPayload(values: Record<string,string>): PredictPayload 
   if (!["female", "male"].includes(genderValue)) throw new Error("Choose Female or Male because the current model supports only its original binary gender encoding.");
   return {
     Age:number("age"), Gender:genderValue === "male" ? 1 : 0, ESR:number("esr"), CRP:number("crp"), RF:number("rf"),
-    "Anti-CCP":status("anti-ccp"), "HLA-B27":status("hla-b27"), ANA:status("ana"),
+    "Anti-CCP":number("anti-ccp"), "HLA-B27":status("hla-b27"), ANA:status("ana"),
     "Anti-Ro":status("anti-ro"), "Anti-La":status("anti-la"), "Anti-dsDNA":status("anti-dsdna"),
     "Anti-Sm":status("anti-sm"), C3:number("c3"), C4:number("c4"),
   };
